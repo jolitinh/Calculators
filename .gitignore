@@ -1,0 +1,15 @@
+# Intellij / Web Storm
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+
+# Node modules
+node_modules/
+npm-debug.log
+
+# build files
+dist/
