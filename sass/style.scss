@@ -71,7 +71,17 @@
 		font-size: 36px;
 		cursor: pointer;
 	}
-	
+
+	button.calc-number {
+		font-size: 50px;
+		background-color: #f5f3f3;
+	}
+
+	button.equally {
+		background-color: #000000;
+		color: #ffffff;
+	}
+
 	sup, span  {
 		font-size: 26px;
 	}
@@ -88,22 +98,10 @@
 		height: 54px;
 		background-color: #6d6d6d;
 	}
-}
 
-
-
-.value-box {
-	padding: 10px 30px;
-	border-bottom: 1px solid #bebebe;
-	background-color: #ffffff;
-}
-
-.calc-box button.calc-number {
-	font-size: 50px;
-	background-color: #f5f3f3;
-}
-
-.calc-box button.equally {
-	background-color: #000000;
-	color: #ffffff;
+	.value-box {
+		padding: 10px 30px;
+		border-bottom: 1px solid #bebebe;
+		background-color: #ffffff;
+	}
 }
