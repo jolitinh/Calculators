@@ -7,4 +7,6 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('default', ['styles']);
+gulp.task('default', function() {
+    gulp.watch('sass/**/*.scss',['styles']);
+});
