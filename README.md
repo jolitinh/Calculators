@@ -1,4 +1,4 @@
-# Rubric UI - React Implementation
+# Basic and Scientific Javascript Calculators
 
 ## To use
 
