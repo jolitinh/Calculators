@@ -10,7 +10,53 @@
 		
 		<link href="dist/css/style.css" type="text/css" rel="stylesheet" />
 		<script>
-			
+			let operand1 = 0, operand2 = 0, operator, calculationMade = false;
+
+			let appendOperation = (operation) => {
+				
+				if(operator === undefined ){
+					operator = operation;
+					operand1 = Calculator.calcValue.value;
+					calculationMade = true;
+				} else {
+					debugger;
+				}
+
+				
+				console.log("Operation", operator);
+			}
+
+			let appendNumber = (number) => {
+				let currentVal = Calculator.calcValue.value;
+
+				if(number ==='.' && currentVal.indexOf('.') > 0){
+					return;
+				}
+
+				if(currentVal === '0' || calculationMade){
+					Calculator.calcValue.value = number;
+					calculationMade = false;
+				} else {
+					Calculator.calcValue.value += number;
+				}
+			}
+
+			let clearEntries = () => {
+				Calculator.calcValue.value = '0';
+				operand1 = 0;
+				operator = undefined;
+			}
+
+			let performCalculation = () => {
+				if(operator !== undefined){
+					Calculator.calcValue.value = eval(parseFloat(operand1) + operator + Calculator.calcValue.value);
+					operand1 = 0;
+					operator = undefined;
+					calculationMade = true;
+				}
+			}
+
+
 		</script>
 	</head>
 	<body>
@@ -23,33 +69,33 @@
 					</div>
 					<ul>
 						<li><button type="button">&radic;</button></li>
-						<li><button type="button" onclick="">+/-</button></li>
-						<li><button type="submit">%</button></li>
-						<li><button type="submit">c</button></li>
+						<li><button type="button">+/-</button></li>
+						<li><button type="button">%</button></li>
+						<li><button type="button" onclick="clearEntries();">c</button></li>
 					</ul>
 					<ul>
-						<li><button type="button" class="calc-number">7</button></li>
-						<li><button type="button" class="calc-number">8</button></li>
-						<li><button type="button" class="calc-number">9</button></li>
-						<li><button type="button">&divide;</button></li>
+						<li><button type="button" class="calc-number" value="7" onclick="appendNumber(this.value);">7</button></li>
+						<li><button type="button" class="calc-number" value="8" onclick="appendNumber(this.value);">8</button></li>
+						<li><button type="button" class="calc-number" value="9" onclick="appendNumber(this.value);">9</button></li>
+						<li><button type="button" value="/" onclick="appendOperation(this.value);">&divide;</button></li>
 					</ul>
 					<ul>
-						<li><button type="button" class="calc-number">4</button></li>
-						<li><button type="button" class="calc-number">5</button></li>
-						<li><button type="button" class="calc-number">6</button></li>
-						<li><button type="button">&times;</button></li>
+						<li><button type="button" class="calc-number" value="4" onclick="appendNumber(this.value);">4</button></li>
+						<li><button type="button" class="calc-number" value="5" onclick="appendNumber(this.value);">5</button></li>
+						<li><button type="button" class="calc-number" value="6" onclick="appendNumber(this.value);">6</button></li>
+						<li><button type="button" value="*" onclick="appendOperation(this.value);">&times;</button></li>
 					</ul>
 					<ul>
-						<li><button type="button" class="calc-number" onclick="Calculator.calcValue.value = parseFloat(Calculator.calcValue.value +1)">1</button></li>
-						<li><button type="button" class="calc-number">2</button></li>
-						<li><button type="button" class="calc-number">3</button></li>
-						<li><button type="button">&minus;</button></li>
+						<li><button type="button" class="calc-number" value="1" onclick="appendNumber(this.value);">1</button></li>
+						<li><button type="button" class="calc-number" value="2" onclick="appendNumber(this.value);">2</button></li>
+						<li><button type="button" class="calc-number" value="3" onclick="appendNumber(this.value);">3</button></li>
+						<li><button type="button" value="-" onclick="appendOperation(this.value);">&minus;</button></li>
 					</ul>
 					<ul>
-						<li><button type="button" class="calc-number">0</button></li>
-						<li><button type="button" class="calc-number">.</button></li>
-						<li><button type="button" class="calc-number equally">=</button></li>
-						<li><button type="button">+</button></li>
+						<li><button type="button" class="calc-number" value="0" onclick="appendNumber(this.value);">0</button></li>
+						<li><button type="button" class="calc-number" value="." onclick="appendNumber(this.value);">.</button></li>
+						<li><button type="button" class="calc-number equally" value="=" onclick="performCalculation()">=</button></li>
+						<li><button type="button" value="+" onclick="appendOperation(this.value);">+</button></li>
 					</ul>
 				</form>
 			</div>
