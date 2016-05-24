@@ -19,7 +19,7 @@
 				if(operator !== undefined ){
 					performCalculation();
 				}
-				
+
 				operator = operation;
 				operand1 = Calculator.calcValue.value;
 				calculationMade = true;
@@ -47,8 +47,13 @@
 			}
 
 			let performCalculation = () => {
+				let calculatedVal = 0;
 				if(operator !== undefined){
-					Calculator.calcValue.value = eval(parseFloat(operand1) + operator + Calculator.calcValue.value);
+					calculatedVal = eval(parseFloat(operand1) + operator + Calculator.calcValue.value);
+					if(isNaN(calculatedVal)){
+						calculatedVal = 'Error';
+					}
+					Calculator.calcValue.value = calculatedVal;
 					operand1 = 0;
 					operator = undefined;
 					calculationMade = true;
