@@ -10,20 +10,19 @@
 		
 		<link href="dist/css/style.css" type="text/css" rel="stylesheet" />
 		<script>
-			let operand1 = 0, operand2 = 0, operator, calculationMade = false;
+			let operand1 = 0, 
+				operand2 = 0, 
+				operator, 
+				calculationMade = false;
 
 			let appendOperation = (operation) => {
-				
-				if(operator === undefined ){
-					operator = operation;
-					operand1 = Calculator.calcValue.value;
-					calculationMade = true;
-				} else {
-					debugger;
+				if(operator !== undefined ){
+					performCalculation();
 				}
-
 				
-				console.log("Operation", operator);
+				operator = operation;
+				operand1 = Calculator.calcValue.value;
+				calculationMade = true;
 			}
 
 			let appendNumber = (number) => {
@@ -56,11 +55,20 @@
 				}
 			}
 
+			let invertValue = () => {
+				Calculator.calcValue.value = parseFloat(Calculator.calcValue.value) * -1;
+			}
 
+			let dividByHundred = () => {
+				Calculator.calcValue.value = parseFloat(Calculator.calcValue.value) / 100;
+			}
+
+			let squareRoot = () => {
+				Calculator.calcValue.value = Math.sqrt(parseFloat(Calculator.calcValue.value));
+			}
 		</script>
 	</head>
 	<body>
-		
 		<div class="container-simple">
 			<div class="calc-box">
 				<form name="Calculator">
@@ -68,9 +76,9 @@
 						<input name="calcValue" type="text" value="0"/>
 					</div>
 					<ul>
-						<li><button type="button">&radic;</button></li>
-						<li><button type="button">+/-</button></li>
-						<li><button type="button">%</button></li>
+						<li><button type="button" onclick="squareRoot();">&radic;</button></li>
+						<li><button type="button" onclick="invertValue();">+/-</button></li>
+						<li><button type="button" onclick="dividByHundred();">%</button></li>
 						<li><button type="button" onclick="clearEntries();">c</button></li>
 					</ul>
 					<ul>
