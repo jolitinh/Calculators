@@ -4,15 +4,17 @@ const connect = require('connect');
 const serve = require('serve-static');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
 
 gulp.task('styles', function() {
-    gulp.src('sass/**/*.scss')
+    gulp.src('src/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dist/css/'));
 });
 
 gulp.task('watch',function() {
-    gulp.watch('sass/**/*.scss',['styles']);
+    gulp.watch('src/ass/**/*.scss',['styles']);
 });
 
 gulp.task('babel', () =>
@@ -24,6 +26,15 @@ gulp.task('babel', () =>
         .pipe(gulp.dest('./dist/js/'))
 );
 
+gulp.task('browserify', function() {
+    return browserify('./dist/js/application.js')
+        // bundles it and creates a file called main.js
+        .bundle()
+        .pipe(source('main.js'))
+        // saves it the public/js/ directory
+        .pipe(gulp.dest('./dist/js/'));
+})
+
 gulp.task('server', function() {
   return connect().use(serve(__dirname))
     .listen(8080)
@@ -32,4 +43,5 @@ gulp.task('server', function() {
       });
 });
 
-gulp.task('default', ['styles', 'babel', 'watch']);
+gulp.task('default', ['styles', 'babel', 'watch', 'server']);
+gulp.task('dist', ['styles', 'babel']);
