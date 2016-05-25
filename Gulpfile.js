@@ -1,7 +1,9 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var connect = require('connect');
-var serve = require('serve-static');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const connect = require('connect');
+const serve = require('serve-static');
+const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 gulp.task('styles', function() {
     gulp.src('sass/**/*.scss')
@@ -13,6 +15,15 @@ gulp.task('watch',function() {
     gulp.watch('sass/**/*.scss',['styles']);
 });
 
+gulp.task('babel', () =>
+    gulp.src('src/scripts/*')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat('application.js'))
+        .pipe(gulp.dest('./dist/js/'))
+);
+
 gulp.task('server', function() {
   return connect().use(serve(__dirname))
     .listen(8080)
@@ -21,4 +32,4 @@ gulp.task('server', function() {
       });
 });
 
-gulp.task('default', ['styles', 'watch']);
+gulp.task('default', ['styles', 'babel', 'watch']);
