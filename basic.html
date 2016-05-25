@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		
 		<link href="dist/css/style.css" type="text/css" rel="stylesheet" />
+
 		<script>
 			let operand1 = 0, 
 				operand2 = 0, 
@@ -62,14 +63,18 @@
 
 			let invertValue = () => {
 				Calculator.calcValue.value = parseFloat(Calculator.calcValue.value) * -1;
+				calculationMade = true;
 			}
 
 			let dividByHundred = () => {
 				Calculator.calcValue.value = parseFloat(Calculator.calcValue.value) / 100;
+				calculationMade = true;
 			}
 
 			let squareRoot = () => {
-				Calculator.calcValue.value = Math.sqrt(parseFloat(Calculator.calcValue.value));
+				let calculatedVal = Math.sqrt(parseFloat(Calculator.calcValue.value));
+				Calculator.calcValue.value = (isNaN(calculatedVal)) ? 'Error' : calculatedVal;
+				calculationMade = true;
 			}
 		</script>
 	</head>
