@@ -6,6 +6,7 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
+const stringify = require('stringify');
 
 gulp.task('styles', function() {
     gulp.src('src/sass/**/*.scss')
@@ -28,12 +29,29 @@ gulp.task('babel', () =>
 
 gulp.task('browserify', function() {
     return browserify('./dist/js/application.js')
+        .transform(stringify, {
+            appliesTo: { includeExtensions: ['.html'] },
+            minify: true
+        })
         // bundles it and creates a file called main.js
         .bundle()
         .pipe(source('main.js'))
         // saves it the public/js/ directory
         .pipe(gulp.dest('./dist/js/'));
 })
+
+
+gulp.task('js', function() {
+  return browserify({ 'entries': ['src/main.js'], 'debug' : env !== 'dev' })
+    .transform(stringify, {
+        appliesTo: { includeExtensions: ['.html'] },
+        minify: true
+    })
+    .bundle()
+    .pipe(source('main.js')) // gives streaming vinyl file object
+    .pipe(gulp.dest(paths.build));
+});
+
 
 gulp.task('server', function() {
   return connect().use(serve(__dirname))
