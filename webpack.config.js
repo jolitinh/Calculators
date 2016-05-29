@@ -13,7 +13,10 @@ module.exports = {
        query: {
         presets: ['es2015']
       }
-    }]
+    },{
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -25,5 +28,8 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist'
+  },
+  sassLoader: {
+    includePaths: ['./src/sass']
   }
 };
