@@ -1,4 +1,4 @@
-let template = require('./calculator.tpl.html');
+let template = require('./scientific-calculator.tpl.html');
 
 module.exports = () => ({
 	restrict: 'E',

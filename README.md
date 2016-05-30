@@ -2,11 +2,11 @@
 
 ## To use
 
-Basic and Scientific calculators that will be resuable in other applications.   
+Basic and Scientific calculators that are resuable in other applications.   
 
 ### Node
 
 ```sh
 npm install
-gulp
+webpack
 ```
