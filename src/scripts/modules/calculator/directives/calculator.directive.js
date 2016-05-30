@@ -6,11 +6,9 @@ module.exports = () => ({
 	replace: true,
 	scope: true,
 	link: (scope) => {
-		scope.operand1 = 0, 
-		scope.operand2 = 0, 
-		scope.calculatorOutput = '0',
-		scope.operator,
-		scope.calculationMade = false;
+		let operand1 = 0, operator, calculationMade = false;
+
+		scope.calculatorOutput = '0';
 
 		scope.appendNumber = ($event) => {
 			let valueEntered = $event.currentTarget.value;
@@ -19,9 +17,9 @@ module.exports = () => ({
 				return;
 			}
 
-			if(scope.calculatorOutput === '0' || scope.calculationMade){
+			if(scope.calculatorOutput === '0' || calculationMade){
 				scope.calculatorOutput = valueEntered;
-				scope.calculationMade = false;
+				calculationMade = false;
 			} else {
 				scope.calculatorOutput += valueEntered;
 			}
@@ -30,54 +28,54 @@ module.exports = () => ({
 		scope.appendOperation = ($event) => {
 			let operation = $event.currentTarget.value;
 
-			if(scope.operator !== undefined ){
+			if(operator !== undefined ){
 				scope.performCalculation();
 			}
 
-			scope.operator = operation;
-			scope.operand1 = scope.calculatorOutput;
-			scope.calculationMade = true;
+			operator = operation;
+			operand1 = scope.calculatorOutput;
+			calculationMade = true;
 		}
 
 		scope.performCalculation = () => {
-			if(scope.operator === undefined) {
+			if(operator === undefined) {
 				return;
 			};
 
 			let calculatedVal = 0;
 
-			calculatedVal = eval(parseFloat(scope.operand1) + scope.operator + scope.calculatorOutput);
+			calculatedVal = eval(parseFloat(operand1) + operator + scope.calculatorOutput);
 
 			if(isNaN(calculatedVal)){
 				calculatedVal = 'Error';
 			}
 
 			scope.calculatorOutput= calculatedVal;
-			scope.operand1 = 0;
-			scope.operator = undefined;
-			scope.calculationMade = true;
+			operand1 = 0;
+			operator = undefined;
+			calculationMade = true;
 		}
 
 		scope.invertValue = () => {
 			scope.calculatorOutput = parseFloat(scope.calculatorOutput) * -1;
-			scope.calculationMade = true;  //?
+			calculationMade = true;  //?
 		}
 
 		scope.squareRoot = () => {
 			let calculatedVal = Math.sqrt(parseFloat(scope.calculatorOutput));
 			scope.calculatorOutput= (isNaN(calculatedVal)) ? 'Error' : calculatedVal;
-			scope.calculationMade = true;
+			calculationMade = true;
 		}
 
 		scope.dividByHundred = () => {
 			scope.calculatorOutput = parseFloat(scope.calculatorOutput) / 100;
-			scope.calculationMade = true;
+			calculationMade = true;
 		}
 
 		scope.clearEntries = () => {
 			scope.calculatorOutput = '0';
-			scope.operand1 = 0;
-			scope.operator = undefined;
+			operand1 = 0;
+			operator = undefined;
 		}
 
 		let alreadyHasDecimal = number => !!(number.indexOf('.') > 0);
