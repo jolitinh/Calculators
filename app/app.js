@@ -1,10 +1,7 @@
-require("./styles/style.scss");
 
 require('angular');
-
+require("./styles/style.scss");
 require('./modules/calculator');
-
-//require("!style!css!./sass/blah.css");
 
 
 var app = angular.module('Calculators', ['dle.calculator'])

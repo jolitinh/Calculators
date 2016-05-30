@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './src/scripts/app.js'
+    './app/app.js'
   ],
   module: {
     loaders: [{
