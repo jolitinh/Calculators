@@ -1,7 +1,7 @@
 # DLE Utilities
-This repo consists of Angular directives that could be used in different applications via directives. 
+This repo consists of UI Widgets that could be used in different applications via Angular directives. 
 
-## Available Utilities
+## Available Angular Directives
 
   - Basic Calculator  
   ```
@@ -13,6 +13,7 @@ This repo consists of Angular directives that could be used in different applica
   ```
 <scientific-calculator></scientific-calculator>
 ```
+![alt tag](https://github.mheducation.com/MHEducation/dle-utilities/blob/master/screenshots/scientific-calculator.png)
 
 
 
