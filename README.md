@@ -4,11 +4,11 @@ This repo consists of Angular directives that could be used in different applica
 ## Available Utilities
 
   - Basic Calculator  
-  ```sh
+  ```
 <calculator></calculator>
 ```
   - Scientific Calculator
-   ```sh
+   ```
 <scientific-calculator></scientific-calculator>
 ```
 
