@@ -30,7 +30,7 @@ In order to be able to use the webpack command in the terminal, you will need to
 $ npm install webpack -g
 ```
 
-Once webpack is running you're ready to clone the repos and install its dependancies:
+Once webpack is running, you're ready to clone the repos and install its dependancies:
 ```sh
 $ git clone [git-repo-url]
 $ cd dle-utilities
@@ -45,4 +45,9 @@ Assuming you've done this in the same parent folder as the project you want to u
 
 ```sh
 $ npm install ../dle-utilities --save
+```
+
+Then add a <script> to your html file:
+```sh
+<script src="/node_modules/dle-utilities/dle.utilities.js"></script>
 ```
