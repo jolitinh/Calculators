@@ -3,8 +3,14 @@ This repo consists of Angular directives that could be used in different applica
 
 ## Available Utilities
 
-  - Basic Calculator  <calculator></calculator>
-  - Scientific Calculator <scientific-calculator></scientific-calculator>
+  - Basic Calculator  
+  ```sh
+<calculator></calculator>
+```
+  - Scientific Calculator
+   ```sh
+<scientific-calculator></scientific-calculator>
+```
 
 ### Running Demo
 
