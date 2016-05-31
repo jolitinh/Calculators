@@ -54,12 +54,12 @@ Then add a script tag to your html file:
 
 Once that's done, you're now able to add it as an Angular dependancy to your existing Angular apps.   You could either use the entire library which is wrapped as a 'dle.utilities' module: 
 ```
-var app = angular.module('MyNewAngular ', ['dle.utilities']);
+var app = angular.module('MyNewAngularApp', ['dle.utilities']);
 ```
 
 or you could just choose which particular modules you want:
 
 ```
-var app = angular.module('MyNewAngular ', ['dle.calculator', 'dle.scientific-calculator']);
+var app = angular.module('MyNewAngularApp', ['dle.calculator', 'dle.scientific-calculator']);
 ```
 
