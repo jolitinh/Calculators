@@ -1,8 +1,9 @@
-# Basic and Scientific Javascript Calculators
+# DLE Utilities
 
-## To use
+## Available Utilities
 
-Basic and Scientific calculators that are resuable in other applications.   
+  - Basic Calculator
+  - Scientific Calculator
 
 ### Node
 
