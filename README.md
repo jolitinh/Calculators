@@ -23,6 +23,15 @@ Once webpack is running you're ready to clone the repos and install its dependan
 ```sh
 $ git clone [git-repo-url]
 $ cd dle-utilities
-npm install
-webpack
+$ npm install
+$ webpack
+```
+
+### Integration with other apps
+At the moment these utilities aren't being hosted in a private NPM registry, so in order to use them you will first have to go through the installation steps mentioned above.
+
+Assuming you've done this in the same parent folder as the project you want to use them in, you will nave to install the module using the "npm i" command.
+
+```sh
+$ npm install ../dle-utilities --save
 ```
