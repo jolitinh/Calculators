@@ -51,3 +51,15 @@ Then add a <script> to your html file:
 ```sh
 <script src="/node_modules/dle-utilities/dle.utilities.js"></script>
 ```
+
+Once that's done, you're now able to add it as an Angular dependancy to your existing Angular apps.   You could either use the entire library which is wrapped as a 'dle.utilities' module: 
+```sh
+var app = angular.module('MyNewAngular ', ['dle.utilities']);
+```
+
+or you could just choose which particular modules you want:
+
+```sh
+var app = angular.module('MyNewAngular ', ['dle.calculator', 'dle.scientific-calculator']);
+```
+
