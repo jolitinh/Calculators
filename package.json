@@ -1,0 +1,34 @@
+{
+  "name": "dle-utilities",
+  "version": "0.0.1",
+  "description": "UI Widgets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.mheducation.com/MHEducation/dle-utilities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "connect": "^3.4.1",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.7.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "serve-static": "^1.10.2",
+    "stringify": "^5.1.0",
+    "style-loader": "^0.13.1",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
