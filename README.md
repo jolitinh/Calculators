@@ -1,5 +1,5 @@
 # DLE Utilities
-This repo consists of Angular directives that coudl be used in different applications via directives. 
+This repo consists of Angular directives that could be used in different applications via directives. 
 
 ## Available Utilities
 
@@ -14,10 +14,15 @@ Within the project, a demo page has been created that allows you to test out the
 ### Installation
 In order to add more utilities, or make changes to existing one you need to have [Node.js](https://nodejs.org/) v4+ along with webpack.
 
-You need webpack installed globally.
-
+In order to be able to use the webpack command in the terminal, you will need to have it installed globally:
 ```sh
+$ npm install webpack -g
+```
+
+Once webpack is running you're ready to clone the repos and install its dependancies:
+```sh
+$ git clone [git-repo-url]
+$ cd dle-utilities
 npm install
-npm install webpack -g
 webpack
 ```
