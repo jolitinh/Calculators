@@ -7,10 +7,14 @@ This repo consists of Angular directives that could be used in different applica
   ```
 <calculator></calculator>
 ```
+![alt tag](https://github.mheducation.com/MHEducation/dle-utilities/blob/master/screenshots/basic-calculator.png)
+
   - Scientific Calculator
-   ```
+  ```
 <scientific-calculator></scientific-calculator>
 ```
+
+
 
 ### Running Demo
 
