@@ -21,6 +21,8 @@ This repo consists of UI Widgets that could be used in different applications vi
 
 Within the project, a demo page has been created that allows you to test out the utilties without having to embed them in a separate project.  An already bundled js file has been checked in so you don't have to anything to run it locally but download the project by clicking on the "Download ZIP" button in the top right hand corner of the repo's GitHub page.
 
+After downloading it, open the calculator-demo.html file in a browswer.  It doesn't need to run on a webserver. 
+
 
 ### Dev Installation
 In order to add more utilities, or make changes to existing one you need to have [Node.js](https://nodejs.org/) v4+ along with webpack.
