@@ -18,6 +18,8 @@
     "babel-preset-es2015": "^6.9.0",
     "connect": "^3.4.1",
     "css-loader": "^0.23.1",
+    "eslint": "^2.11.1",
+    "eslint-loader": "^1.3.0",
     "node-sass": "^3.7.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.0",
@@ -30,5 +32,17 @@
   },
   "dependencies": {
     "angular": "^1.5.5"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+        "es6": true,
+        "commonjs": true,
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+      "angular": 1
+    }
   }
 }

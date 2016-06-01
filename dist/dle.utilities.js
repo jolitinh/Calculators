@@ -31509,7 +31509,7 @@
 				scope.performCalculation = function () {
 					if (operator === undefined) {
 						return;
-					};
+					}
 
 					var calculatedVal = 0;
 
@@ -31621,7 +31621,7 @@
 				scope.performCalculation = function () {
 					if (operator === undefined) {
 						return;
-					};
+					}
 
 					var calculatedVal = 0;
 

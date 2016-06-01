@@ -40,7 +40,7 @@ module.exports = () => ({
 		scope.performCalculation = () => {
 			if(operator === undefined) {
 				return;
-			};
+			}
 
 			let calculatedVal = 0;
 
