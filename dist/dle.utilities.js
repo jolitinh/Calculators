@@ -58,10 +58,10 @@
 	__webpack_require__(8);
 	__webpack_require__(11);
 
-	var app = angular.module('DLE.Utilities', ['dle.calculator', 'dle.scientific-calculator']);
+	angular.module('dle.utilities', ['dle.calculator', 'dle.scientific-calculator']);
 
 	angular.element(document).ready(function () {
-	  angular.bootstrap(document, ['Calculators']);
+	  angular.bootstrap(document, ['dle.utilities']);
 	});
 
 /***/ },
@@ -31482,7 +31482,7 @@
 				scope.appendNumber = function ($event) {
 					var valueEntered = $event.currentTarget.value;
 
-					if (valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput)) {
+					if (valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput.toString())) {
 						return;
 					}
 
@@ -31548,7 +31548,7 @@
 				};
 
 				var alreadyHasDecimal = function alreadyHasDecimal(number) {
-					return !!(number.indexOf('.') > 0);
+					return number.indexOf('.') > 0;
 				};
 			}
 		};

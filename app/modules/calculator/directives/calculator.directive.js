@@ -13,7 +13,7 @@ module.exports = () => ({
 		scope.appendNumber = ($event) => {
 			let valueEntered = $event.currentTarget.value;
 
-			if(valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput)){
+			if(valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput.toString())){
 				return;
 			}
 
@@ -50,7 +50,7 @@ module.exports = () => ({
 				calculatedVal = 'Error';
 			}
 
-			scope.calculatorOutput= calculatedVal;
+			scope.calculatorOutput = calculatedVal;
 			operand1 = 0;
 			operator = undefined;
 			calculationMade = true;
@@ -78,6 +78,6 @@ module.exports = () => ({
 			operator = undefined;
 		}
 
-		let alreadyHasDecimal = number => !!(number.indexOf('.') > 0);
+		let alreadyHasDecimal = number => number.indexOf('.') > 0;
 	}
 });
