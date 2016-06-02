@@ -31471,78 +31471,80 @@
 			restrict: 'E',
 			template: template,
 			replace: true,
-			scope: true,
-			link: function link(scope) {
+			controllerAs: 'ctrl',
+			controller: function controller() {
+				var _this = this;
+
 				var operand1 = 0,
 				    operator = void 0,
 				    calculationMade = false;
 
-				scope.calculatorOutput = '0';
+				this.calculatorOutput = '0';
 
-				scope.appendNumber = function ($event) {
+				this.appendNumber = function ($event) {
 					var valueEntered = $event.currentTarget.value;
 
-					if (valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput.toString())) {
+					if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
 						return;
 					}
 
-					if (scope.calculatorOutput === '0' || calculationMade) {
-						scope.calculatorOutput = valueEntered;
+					if (_this.calculatorOutput === '0' || calculationMade) {
+						_this.calculatorOutput = valueEntered;
 						calculationMade = false;
 					} else {
-						scope.calculatorOutput += valueEntered;
+						_this.calculatorOutput += valueEntered;
 					}
 				};
 
-				scope.appendOperation = function ($event) {
+				this.appendOperation = function ($event) {
 					var operation = $event.currentTarget.value;
 
 					if (operator !== undefined) {
-						scope.performCalculation();
+						_this.performCalculation();
 					}
 
 					operator = operation;
-					operand1 = scope.calculatorOutput;
+					operand1 = _this.calculatorOutput;
 					calculationMade = true;
 				};
 
-				scope.performCalculation = function () {
+				this.performCalculation = function () {
 					if (operator === undefined) {
 						return;
 					}
 
 					var calculatedVal = 0;
 
-					calculatedVal = eval(parseFloat(operand1) + operator + scope.calculatorOutput);
+					calculatedVal = eval(parseFloat(operand1) + operator + _this.calculatorOutput);
 
 					if (isNaN(calculatedVal)) {
 						calculatedVal = 'Error';
 					}
 
-					scope.calculatorOutput = calculatedVal;
+					_this.calculatorOutput = calculatedVal;
 					operand1 = 0;
 					operator = undefined;
 					calculationMade = true;
 				};
 
-				scope.invertValue = function () {
-					scope.calculatorOutput = parseFloat(scope.calculatorOutput) * -1;
+				this.invertValue = function () {
+					_this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
 					calculationMade = true;
 				};
 
-				scope.squareRoot = function () {
-					var calculatedVal = Math.sqrt(parseFloat(scope.calculatorOutput));
-					scope.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
+				this.squareRoot = function () {
+					var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
+					_this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
 					calculationMade = true;
 				};
 
-				scope.dividByHundred = function () {
-					scope.calculatorOutput = parseFloat(scope.calculatorOutput) / 100;
+				this.dividByHundred = function () {
+					_this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
 					calculationMade = true;
 				};
 
-				scope.clearEntries = function () {
-					scope.calculatorOutput = '0';
+				this.clearEntries = function () {
+					_this.calculatorOutput = '0';
 					operand1 = 0;
 					operator = undefined;
 				};
@@ -31558,7 +31560,7 @@
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container-simple\">\n\t<div class=\"calc-box\">\n\t\t<form name=\"Calculator\">\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input name=\"calcValue\" type=\"text\" ng-model=\"calculatorOutput\" readonly=\"readonly\"/>\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" ng-click=\"squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"dividByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"
+	module.exports = "<div class=\"container-simple\">\n\t<div class=\"calc-box\">\n\t\t<form name=\"Calculator\">\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input name=\"calcValue\" type=\"text\" ng-model=\"ctrl.calculatorOutput\" readonly=\"readonly\"/>\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.dividByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"ctrl.appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"ctrl.appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"ctrl.appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"ctrl.appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"ctrl.appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"ctrl.appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"ctrl.appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"ctrl.appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"ctrl.appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"ctrl.appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"ctrl.appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"ctrl.appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"ctrl.appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"ctrl.appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"ctrl.performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"ctrl.appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"
 
 /***/ },
 /* 11 */
@@ -31583,78 +31585,80 @@
 			restrict: 'E',
 			template: template,
 			replace: true,
-			scope: true,
-			link: function link(scope) {
+			controllerAs: 'ctrl',
+			controller: function controller() {
+				var _this = this;
+
 				var operand1 = 0,
 				    operator = void 0,
 				    calculationMade = false;
 
-				scope.calculatorOutput = '0';
+				this.calculatorOutput = '0';
 
-				scope.appendNumber = function ($event) {
+				this.appendNumber = function ($event) {
 					var valueEntered = $event.currentTarget.value;
 
-					if (valueEntered === '.' && alreadyHasDecimal(scope.calculatorOutput)) {
+					if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
 						return;
 					}
 
-					if (scope.calculatorOutput === '0' || calculationMade) {
-						scope.calculatorOutput = valueEntered;
+					if (_this.calculatorOutput === '0' || calculationMade) {
+						_this.calculatorOutput = valueEntered;
 						calculationMade = false;
 					} else {
-						scope.calculatorOutput += valueEntered;
+						_this.calculatorOutput += valueEntered;
 					}
 				};
 
-				scope.appendOperation = function ($event) {
+				this.appendOperation = function ($event) {
 					var operation = $event.currentTarget.value;
 
 					if (operator !== undefined) {
-						scope.performCalculation();
+						_this.performCalculation();
 					}
 
 					operator = operation;
-					operand1 = scope.calculatorOutput;
+					operand1 = _this.calculatorOutput;
 					calculationMade = true;
 				};
 
-				scope.performCalculation = function () {
+				this.performCalculation = function () {
 					if (operator === undefined) {
 						return;
 					}
 
 					var calculatedVal = 0;
 
-					calculatedVal = eval(parseFloat(operand1) + operator + scope.calculatorOutput);
+					calculatedVal = eval(parseFloat(operand1) + operator + _this.calculatorOutput);
 
 					if (isNaN(calculatedVal)) {
 						calculatedVal = 'Error';
 					}
 
-					scope.calculatorOutput = calculatedVal;
+					_this.calculatorOutput = calculatedVal;
 					operand1 = 0;
 					operator = undefined;
 					calculationMade = true;
 				};
 
-				scope.invertValue = function () {
-					scope.calculatorOutput = parseFloat(scope.calculatorOutput) * -1;
+				this.invertValue = function () {
+					_this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
 					calculationMade = true;
 				};
 
-				scope.squareRoot = function () {
-					var calculatedVal = Math.sqrt(parseFloat(scope.calculatorOutput));
-					scope.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
+				this.squareRoot = function () {
+					var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
+					_this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
 					calculationMade = true;
 				};
 
-				scope.dividByHundred = function () {
-					scope.calculatorOutput = parseFloat(scope.calculatorOutput) / 100;
+				this.dividByHundred = function () {
+					_this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
 					calculationMade = true;
 				};
 
-				scope.clearEntries = function () {
-					scope.calculatorOutput = '0';
+				this.clearEntries = function () {
+					_this.calculatorOutput = '0';
 					operand1 = 0;
 					operator = undefined;
 				};
@@ -31670,7 +31674,7 @@
 /* 13 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container\">\n\t<div class=\"calc-box\">\n\t\t<form>\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input calcValue type=\"text\" ng-model=\"calculatorOutput\" readonly=\"readonly\" />\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">(</button></li>\n\t\t\t\t<li><button type=\"submit\">)</button></li>\n\t\t\t\t<li><button type=\"submit\">mc</button></li>\n\t\t\t\t<li><button type=\"submit\">m+</button></li>\n\t\t\t\t<li><button type=\"submit\">m-</button></li>\n\t\t\t\t<li><button type=\"submit\">mr</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"dividByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">2<sup>nd</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>2</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>3</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>y</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">nPr</button></li>\n\t\t\t\t<li><button type=\"submit\">nCr</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">x!</button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>3</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>n</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>1</sup>/<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\">log<sub>10</sub></button></li>\n\t\t\t\t<li><button type=\"submit\">In</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Rad</button></li>\n\t\t\t\t<li><button type=\"submit\">sin</button></li>\n\t\t\t\t<li><button type=\"submit\">cos</button></li>\n\t\t\t\t<li><button type=\"submit\">tan</button></li>\n\t\t\t\t<li><button type=\"submit\">EE</button></li>\n\t\t\t\t<li><button type=\"submit\">e</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Deg</button></li>\n\t\t\t\t<li><button type=\"submit\">sinh</button></li>\n\t\t\t\t<li><button type=\"submit\">cosh</button></li>\n\t\t\t\t<li><button type=\"submit\">tanh</button></li>\n\t\t\t\t<li><button type=\"submit\">TT</button></li>\n\t\t\t\t<li><button type=\"submit\">Rand</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"
+	module.exports = "<div class=\"container\">\n\t<div class=\"calc-box\">\n\t\t<form>\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input calcValue type=\"text\" ng-model=\"ctrl.calculatorOutput\" readonly=\"readonly\" />\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">(</button></li>\n\t\t\t\t<li><button type=\"submit\">)</button></li>\n\t\t\t\t<li><button type=\"submit\">mc</button></li>\n\t\t\t\t<li><button type=\"submit\">m+</button></li>\n\t\t\t\t<li><button type=\"submit\">m-</button></li>\n\t\t\t\t<li><button type=\"submit\">mr</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.dividByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">2<sup>nd</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>2</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>3</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>y</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">nPr</button></li>\n\t\t\t\t<li><button type=\"submit\">nCr</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"ctrl.appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"ctrl.appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"ctrl.appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"ctrl.appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">x!</button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>3</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>n</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>1</sup>/<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\">log<sub>10</sub></button></li>\n\t\t\t\t<li><button type=\"submit\">In</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"ctrl.appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"ctrl.appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"ctrl.appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"ctrl.appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Rad</button></li>\n\t\t\t\t<li><button type=\"submit\">sin</button></li>\n\t\t\t\t<li><button type=\"submit\">cos</button></li>\n\t\t\t\t<li><button type=\"submit\">tan</button></li>\n\t\t\t\t<li><button type=\"submit\">EE</button></li>\n\t\t\t\t<li><button type=\"submit\">e</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"ctrl.appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"ctrl.appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"ctrl.appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"ctrl.appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Deg</button></li>\n\t\t\t\t<li><button type=\"submit\">sinh</button></li>\n\t\t\t\t<li><button type=\"submit\">cosh</button></li>\n\t\t\t\t<li><button type=\"submit\">tanh</button></li>\n\t\t\t\t<li><button type=\"submit\">TT</button></li>\n\t\t\t\t<li><button type=\"submit\">Rand</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"ctrl.appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"ctrl.appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"ctrl.performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"ctrl.appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"
 
 /***/ }
 /******/ ]);

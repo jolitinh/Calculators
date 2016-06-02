@@ -2,37 +2,37 @@
 	<div class="calc-box">
 		<form name="Calculator">
 			<div class="value-box">
-				<input name="calcValue" type="text" ng-model="calculatorOutput" readonly="readonly"/>
+				<input name="calcValue" type="text" ng-model="ctrl.calculatorOutput" readonly="readonly"/>
 			</div>
 			<ul>
-				<li><button type="button" ng-click="squareRoot();">&radic;</button></li>
-				<li><button type="button" ng-click="invertValue();">+/-</button></li>
-				<li><button type="button" ng-click="dividByHundred();">%</button></li>
-				<li><button type="button" ng-click="clearEntries();">c</button></li>
+				<li><button type="button" ng-click="ctrl.squareRoot();">&radic;</button></li>
+				<li><button type="button" ng-click="ctrl.invertValue();">+/-</button></li>
+				<li><button type="button" ng-click="ctrl.dividByHundred();">%</button></li>
+				<li><button type="button" ng-click="ctrl.clearEntries();">c</button></li>
 			</ul>
 			<ul>
-				<li><button type="button" class="calc-number" value="7" ng-click="appendNumber($event);">7</button></li>
-				<li><button type="button" class="calc-number" value="8" ng-click="appendNumber($event);">8</button></li>
-				<li><button type="button" class="calc-number" value="9" ng-click="appendNumber($event);">9</button></li>
-				<li><button type="button" value="/" ng-click="appendOperation($event);">&divide;</button></li>
+				<li><button type="button" class="calc-number" value="7" ng-click="ctrl.appendNumber($event);">7</button></li>
+				<li><button type="button" class="calc-number" value="8" ng-click="ctrl.appendNumber($event);">8</button></li>
+				<li><button type="button" class="calc-number" value="9" ng-click="ctrl.appendNumber($event);">9</button></li>
+				<li><button type="button" value="/" ng-click="ctrl.appendOperation($event);">&divide;</button></li>
 			</ul>
 			<ul>
-				<li><button type="button" class="calc-number" value="4" ng-click="appendNumber($event);">4</button></li>
-				<li><button type="button" class="calc-number" value="5" ng-click="appendNumber($event);">5</button></li>
-				<li><button type="button" class="calc-number" value="6" ng-click="appendNumber($event);">6</button></li>
-				<li><button type="button" value="*" ng-click="appendOperation($event);">&times;</button></li>
+				<li><button type="button" class="calc-number" value="4" ng-click="ctrl.appendNumber($event);">4</button></li>
+				<li><button type="button" class="calc-number" value="5" ng-click="ctrl.appendNumber($event);">5</button></li>
+				<li><button type="button" class="calc-number" value="6" ng-click="ctrl.appendNumber($event);">6</button></li>
+				<li><button type="button" value="*" ng-click="ctrl.appendOperation($event);">&times;</button></li>
 			</ul>
 			<ul>
-				<li><button type="button" class="calc-number" value="1" ng-click="appendNumber($event);">1</button></li>
-				<li><button type="button" class="calc-number" value="2" ng-click="appendNumber($event);">2</button></li>
-				<li><button type="button" class="calc-number" value="3" ng-click="appendNumber($event);">3</button></li>
-				<li><button type="button" value="-" ng-click="appendOperation($event);">&minus;</button></li>
+				<li><button type="button" class="calc-number" value="1" ng-click="ctrl.appendNumber($event);">1</button></li>
+				<li><button type="button" class="calc-number" value="2" ng-click="ctrl.appendNumber($event);">2</button></li>
+				<li><button type="button" class="calc-number" value="3" ng-click="ctrl.appendNumber($event);">3</button></li>
+				<li><button type="button" value="-" ng-click="ctrl.appendOperation($event);">&minus;</button></li>
 			</ul>
 			<ul>
-				<li><button type="button" class="calc-number" value="0" ng-click="appendNumber($event);">0</button></li>
-				<li><button type="button" class="calc-number" value="." ng-click="appendNumber($event);">.</button></li>
-				<li><button type="button" class="calc-number equally" value="=" ng-click="performCalculation();">=</button></li>
-				<li><button type="button" value="+" ng-click="appendOperation($event);">+</button></li>
+				<li><button type="button" class="calc-number" value="0" ng-click="ctrl.appendNumber($event);">0</button></li>
+				<li><button type="button" class="calc-number" value="." ng-click="ctrl.appendNumber($event);">.</button></li>
+				<li><button type="button" class="calc-number equally" value="=" ng-click="ctrl.performCalculation();">=</button></li>
+				<li><button type="button" value="+" ng-click="ctrl.appendOperation($event);">+</button></li>
 			</ul>
 		</form>
 	</div>
