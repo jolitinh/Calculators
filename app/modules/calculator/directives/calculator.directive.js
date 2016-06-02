@@ -1,4 +1,5 @@
 let template = require('./calculator.tpl.html');
+let BigNumber = require('bignumber.js');
 
 module.exports = function() {
 		return {
@@ -45,8 +46,23 @@ module.exports = function() {
 				}
 
 				let calculatedVal = 0;
+				let x = new BigNumber(parseFloat(operand1));
+				let y = new BigNumber(this.calculatorOutput)
 
-				calculatedVal = eval(parseFloat(operand1) + operator + this.calculatorOutput);
+				switch(operator) {
+					case '+':
+						calculatedVal = parseFloat(x.plus(y).valueOf());
+						break;
+					case '-':
+						calculatedVal = parseFloat(x.minus(y).valueOf());
+						break;
+					case '/':
+						calculatedVal = parseFloat(x.dividedBy(y).valueOf());
+						break;
+					case '*':
+						calculatedVal = parseFloat(x.times(y).valueOf());
+						break;
+				}
 
 				if(isNaN(calculatedVal)){
 					calculatedVal = 'Error';

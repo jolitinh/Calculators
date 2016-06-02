@@ -28,15 +28,16 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "bignumber.js": "^2.3.0"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
-        "es6": true,
-        "commonjs": true,
-        "browser": true,
-        "node": true
+      "es6": true,
+      "commonjs": true,
+      "browser": true,
+      "node": true
     },
     "globals": {
       "angular": 1
