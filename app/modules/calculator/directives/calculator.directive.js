@@ -4,6 +4,7 @@ module.exports = () => ({
 	restrict: 'E',
 	template,
 	replace: true,
+	scope: true,
 	controllerAs: 'ctrl',
 	controller: function() {
 		let operand1 = 0, operator, calculationMade = false;

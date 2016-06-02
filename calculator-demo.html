@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My App</title>
+    <title>Calculator Demo</title>
+    <script src="node_modules/angular/angular.min.js"></script>
     <script src="dist/dle.utilities.js"></script>
+    <script>
+        angular.element(document).ready(function() {
+          angular.bootstrap(document, ['dle.utilities']);
+        });
+    </script>
 </head>
 <body>
     <div style="width: 436px;">
