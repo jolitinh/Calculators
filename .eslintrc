@@ -6,15 +6,7 @@
     "node": true
   },
   "globals": {
-    "AIR": true,
     "BigNumber": true,
-    "com": true,
-    "tinymce": true,
-    "mceconfigs": true,
-    "confirm": true,
-    "alert": true,
-    "unescape": true,
-    "AudioContext": true,
     "angular": true
   },
   "rules": {
