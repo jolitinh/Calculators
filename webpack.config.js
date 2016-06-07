@@ -36,6 +36,6 @@ module.exports = {
     includePaths: ['./src/sass']
   },
   eslint: {
-    configFile: '.eslintrc'
+    configFile: './.eslintrc'
   }
 };

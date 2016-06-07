@@ -427,109 +427,111 @@
 	var BigNumber = __webpack_require__(9);
 
 	module.exports = function () {
-		return {
-			restrict: 'E',
-			template: template,
-			replace: true,
-			scope: true,
-			controllerAs: 'ctrl',
-			controller: function controller() {
-				var _this = this;
+	  'use strict';
 
-				var operand1 = 0,
-				    operator = void 0,
-				    calculationMade = false;
+	  return {
+	    restrict: 'E',
+	    template: template,
+	    replace: true,
+	    scope: true,
+	    controllerAs: 'ctrl',
+	    controller: function controller() {
+	      var _this = this;
 
-				this.calculatorOutput = '0';
+	      var operand1 = 0;
+	      var operator = void 0;
+	      var calculationMade = false;
+	      var alreadyHasDecimal = function alreadyHasDecimal(number) {
+	        return number.indexOf('.') > 0;
+	      };
 
-				this.appendNumber = function ($event) {
-					var valueEntered = $event.currentTarget.value;
+	      this.calculatorOutput = '0';
 
-					if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
-						return;
-					}
+	      this.appendNumber = function ($event) {
+	        var valueEntered = $event.currentTarget.value;
 
-					if (_this.calculatorOutput === '0' || calculationMade) {
-						_this.calculatorOutput = valueEntered;
-						calculationMade = false;
-					} else {
-						_this.calculatorOutput += valueEntered;
-					}
-				};
+	        if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
+	          return;
+	        }
 
-				this.appendOperation = function ($event) {
-					var operation = $event.currentTarget.value;
+	        if (_this.calculatorOutput === '0' || calculationMade) {
+	          _this.calculatorOutput = valueEntered;
+	          calculationMade = false;
+	        } else {
+	          _this.calculatorOutput += valueEntered;
+	        }
+	      };
 
-					if (operator !== undefined) {
-						_this.performCalculation();
-					}
+	      this.appendOperation = function ($event) {
+	        var operation = $event.currentTarget.value;
 
-					operator = operation;
-					operand1 = _this.calculatorOutput;
-					calculationMade = true;
-				};
+	        if (operator !== undefined) {
+	          _this.performCalculation();
+	        }
 
-				this.performCalculation = function () {
-					if (operator === undefined) {
-						return;
-					}
+	        operator = operation;
+	        operand1 = _this.calculatorOutput;
+	        calculationMade = true;
+	      };
 
-					var calculatedVal = 0;
-					var x = new BigNumber(parseFloat(operand1));
-					var y = new BigNumber(_this.calculatorOutput);
+	      this.performCalculation = function () {
+	        if (operator === undefined) {
+	          return;
+	        }
 
-					switch (operator) {
-						case '+':
-							calculatedVal = parseFloat(x.plus(y).valueOf());
-							break;
-						case '-':
-							calculatedVal = parseFloat(x.minus(y).valueOf());
-							break;
-						case '/':
-							calculatedVal = parseFloat(x.dividedBy(y).valueOf());
-							break;
-						case '*':
-							calculatedVal = parseFloat(x.times(y).valueOf());
-							break;
-					}
+	        var calculatedVal = 0;
+	        var x = new BigNumber(parseFloat(operand1));
+	        var y = new BigNumber(_this.calculatorOutput);
 
-					if (isNaN(calculatedVal)) {
-						calculatedVal = 'Error';
-					}
+	        switch (operator) {
+	          case '+':
+	            calculatedVal = parseFloat(x.plus(y).valueOf());
+	            break;
+	          case '-':
+	            calculatedVal = parseFloat(x.minus(y).valueOf());
+	            break;
+	          case '/':
+	            calculatedVal = parseFloat(x.dividedBy(y).valueOf());
+	            break;
+	          case '*':
+	            calculatedVal = parseFloat(x.times(y).valueOf());
+	            break;
+	        }
 
-					_this.calculatorOutput = calculatedVal;
-					operand1 = 0;
-					operator = undefined;
-					calculationMade = true;
-				};
+	        if (isNaN(calculatedVal)) {
+	          calculatedVal = 'Error';
+	        }
 
-				this.invertValue = function () {
-					_this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
-					calculationMade = true;
-				};
+	        _this.calculatorOutput = calculatedVal;
+	        operand1 = 0;
+	        operator = undefined;
+	        calculationMade = true;
+	      };
 
-				this.squareRoot = function () {
-					var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
-					_this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
-					calculationMade = true;
-				};
+	      this.invertValue = function () {
+	        _this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
+	        calculationMade = true;
+	      };
 
-				this.dividByHundred = function () {
-					_this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
-					calculationMade = true;
-				};
+	      this.squareRoot = function () {
+	        var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
 
-				this.clearEntries = function () {
-					_this.calculatorOutput = '0';
-					operand1 = 0;
-					operator = undefined;
-				};
+	        _this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
+	        calculationMade = true;
+	      };
 
-				var alreadyHasDecimal = function alreadyHasDecimal(number) {
-					return number.indexOf('.') > 0;
-				};
-			}
-		};
+	      this.dividByHundred = function () {
+	        _this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
+	        calculationMade = true;
+	      };
+
+	      this.clearEntries = function () {
+	        _this.calculatorOutput = '0';
+	        operand1 = 0;
+	        operator = undefined;
+	      };
+	    }
+	  };
 	};
 
 /***/ },
@@ -3297,109 +3299,111 @@
 	var BigNumber = __webpack_require__(9);
 
 	module.exports = function () {
-		return {
-			restrict: 'E',
-			template: template,
-			replace: true,
-			scope: true,
-			controllerAs: 'ctrl',
-			controller: function controller() {
-				var _this = this;
+	  'use strict';
 
-				var operand1 = 0,
-				    operator = void 0,
-				    calculationMade = false;
+	  return {
+	    restrict: 'E',
+	    template: template,
+	    replace: true,
+	    scope: true,
+	    controllerAs: 'ctrl',
+	    controller: function controller() {
+	      var _this = this;
 
-				this.calculatorOutput = '0';
+	      var operand1 = 0;
+	      var operator = void 0;
+	      var calculationMade = false;
+	      var alreadyHasDecimal = function alreadyHasDecimal(number) {
+	        return !!(number.indexOf('.') > 0);
+	      };
 
-				this.appendNumber = function ($event) {
-					var valueEntered = $event.currentTarget.value;
+	      this.calculatorOutput = '0';
 
-					if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
-						return;
-					}
+	      this.appendNumber = function ($event) {
+	        var valueEntered = $event.currentTarget.value;
 
-					if (_this.calculatorOutput === '0' || calculationMade) {
-						_this.calculatorOutput = valueEntered;
-						calculationMade = false;
-					} else {
-						_this.calculatorOutput += valueEntered;
-					}
-				};
+	        if (valueEntered === '.' && alreadyHasDecimal(_this.calculatorOutput.toString())) {
+	          return;
+	        }
 
-				this.appendOperation = function ($event) {
-					var operation = $event.currentTarget.value;
+	        if (_this.calculatorOutput === '0' || calculationMade) {
+	          _this.calculatorOutput = valueEntered;
+	          calculationMade = false;
+	        } else {
+	          _this.calculatorOutput += valueEntered;
+	        }
+	      };
 
-					if (operator !== undefined) {
-						_this.performCalculation();
-					}
+	      this.appendOperation = function ($event) {
+	        var operation = $event.currentTarget.value;
 
-					operator = operation;
-					operand1 = _this.calculatorOutput;
-					calculationMade = true;
-				};
+	        if (operator !== undefined) {
+	          _this.performCalculation();
+	        }
 
-				this.performCalculation = function () {
-					if (operator === undefined) {
-						return;
-					}
+	        operator = operation;
+	        operand1 = _this.calculatorOutput;
+	        calculationMade = true;
+	      };
 
-					var calculatedVal = 0;
-					var x = new BigNumber(parseFloat(operand1));
-					var y = new BigNumber(_this.calculatorOutput);
+	      this.performCalculation = function () {
+	        if (operator === undefined) {
+	          return;
+	        }
 
-					switch (operator) {
-						case '+':
-							calculatedVal = parseFloat(x.plus(y).valueOf());
-							break;
-						case '-':
-							calculatedVal = parseFloat(x.minus(y).valueOf());
-							break;
-						case '/':
-							calculatedVal = parseFloat(x.dividedBy(y).valueOf());
-							break;
-						case '*':
-							calculatedVal = parseFloat(x.times(y).valueOf());
-							break;
-					}
+	        var calculatedVal = 0;
+	        var x = new BigNumber(parseFloat(operand1));
+	        var y = new BigNumber(_this.calculatorOutput);
 
-					if (isNaN(calculatedVal)) {
-						calculatedVal = 'Error';
-					}
+	        switch (operator) {
+	          case '+':
+	            calculatedVal = parseFloat(x.plus(y).valueOf());
+	            break;
+	          case '-':
+	            calculatedVal = parseFloat(x.minus(y).valueOf());
+	            break;
+	          case '/':
+	            calculatedVal = parseFloat(x.dividedBy(y).valueOf());
+	            break;
+	          case '*':
+	            calculatedVal = parseFloat(x.times(y).valueOf());
+	            break;
+	        }
 
-					_this.calculatorOutput = calculatedVal;
-					operand1 = 0;
-					operator = undefined;
-					calculationMade = true;
-				};
+	        if (isNaN(calculatedVal)) {
+	          calculatedVal = 'Error';
+	        }
 
-				this.invertValue = function () {
-					_this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
-					calculationMade = true;
-				};
+	        _this.calculatorOutput = calculatedVal;
+	        operand1 = 0;
+	        operator = undefined;
+	        calculationMade = true;
+	      };
 
-				this.squareRoot = function () {
-					var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
-					_this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
-					calculationMade = true;
-				};
+	      this.invertValue = function () {
+	        _this.calculatorOutput = parseFloat(_this.calculatorOutput) * -1;
+	        calculationMade = true;
+	      };
 
-				this.dividByHundred = function () {
-					_this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
-					calculationMade = true;
-				};
+	      this.squareRoot = function () {
+	        var calculatedVal = Math.sqrt(parseFloat(_this.calculatorOutput));
 
-				this.clearEntries = function () {
-					_this.calculatorOutput = '0';
-					operand1 = 0;
-					operator = undefined;
-				};
+	        _this.calculatorOutput = isNaN(calculatedVal) ? 'Error' : calculatedVal;
+	        calculationMade = true;
+	      };
 
-				var alreadyHasDecimal = function alreadyHasDecimal(number) {
-					return !!(number.indexOf('.') > 0);
-				};
-			}
-		};
+	      this.dividByHundred = function () {
+	        _this.calculatorOutput = parseFloat(_this.calculatorOutput) / 100;
+	        calculationMade = true;
+	      };
+
+	      this.clearEntries = function () {
+	        _this.calculatorOutput = '0';
+	        operand1 = 0;
+	        operator = undefined;
+	      };
+	    }
+	  };
 	};
 
 /***/ },
