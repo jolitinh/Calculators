@@ -34,5 +34,8 @@ module.exports = {
   },
   sassLoader: {
     includePaths: ['./src/sass']
+  },
+  esling: {
+    configFile: '.eslintrc'
   }
 };

@@ -1,0 +1,12 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "commonjs": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "angular": 1
+  }
+}
