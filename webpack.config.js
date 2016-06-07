@@ -35,7 +35,7 @@ module.exports = {
   sassLoader: {
     includePaths: ['./src/sass']
   },
-  esling: {
+  eslint: {
     configFile: '.eslintrc'
   }
 };
