@@ -65,3 +65,19 @@ or you could just choose which particular modules you want:
 var app = angular.module('MyNewAngularApp', ['dle.calculator', 'dle.scientific-calculator']);
 ```
 
+
+### Testing
+
+Unit tests are found under the 'test' folder.  In order to run them you must first have gulp and karma installed globally: 
+
+```sh
+$ npm install -g gulp
+$ npm install -g karma
+```
+
+Running the tests: 
+
+```sh
+$ gulp test
+```
+
