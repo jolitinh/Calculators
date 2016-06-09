@@ -23,20 +23,25 @@ module.exports = function(config) {
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    plugins: [
+     require("karma-jasmine"),
+     require("karma-phantomjs-launcher"),
+     require("karma-spec-reporter"),
+     require('karma-html2js-preprocessor')
+   ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'test/**/*.html': ['html2js']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
