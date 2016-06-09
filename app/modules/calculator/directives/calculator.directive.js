@@ -36,7 +36,7 @@ module.exports = function() {
       this.appendOperation = ($event) => {
         let operation = $event.currentTarget.value;
 
-        if (operator !== undefined) {
+        if (operator !== undefined && !calculationMade) {
           this.performCalculation();
         }
 
@@ -91,7 +91,7 @@ module.exports = function() {
         calculationMade = true;
       };
 
-      this.dividByHundred = () => {
+      this.divideByHundred = () => {
         this.calculatorOutput = parseFloat(this.calculatorOutput) / 100;
         calculationMade = true;
       };
