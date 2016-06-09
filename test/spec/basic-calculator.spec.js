@@ -126,33 +126,48 @@ describe('A basic calculator', () => {
     });
 
   });
-  
 
   describe('$scope.invertValue inverts the current value', () => {
-      xit('positive values become negative', () => {
+      it('positive values become negative', () => {
+        controller.calculatorOutput = '5';
 
+        controller.invertValue();
+        expect(controller.calculatorOutput).toBe(-5);
       });
 
-      xit('negative values become positive', () => {
+      it('negative values become positive', () => {
+        controller.calculatorOutput = '-5';
+
+        controller.invertValue();
+        expect(controller.calculatorOutput).toBe(5);
 
       });
   })
 
   describe('$scope.squareRoot', () => {
-    xit('changes current value to its square root', () => {
+    it('changes current value to its square root', () => {
+      controller.calculatorOutput = '16';
 
+      controller.squareRoot();
+      expect(controller.calculatorOutput).toBe(4);
     });
   });
 
   describe('$scope.divideByHundred', () => {
-    xit('display current value as a percentage', () => {
+    it('display current value as a percentage', () => {
+      controller.calculatorOutput = '1605';
 
+      controller.divideByHundred();
+      expect(controller.calculatorOutput).toBe(16.05);
     });
   });
 
-  describe('$scope.describe', () => {
-    xit('clears operator, operands, and output', () => {
+  describe('$scope.clearEntries', () => {
+    it('clears operator, operands, and output', () => {
+      controller.calculatorOutput = '1';
 
+      controller.clearEntries();
+      expect(controller.calculatorOutput).toBe('0');
     });
   });
 
