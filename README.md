@@ -81,3 +81,9 @@ Running the tests:
 $ gulp test
 ```
 
+or you could also run tests with Karma directly: 
+```sh
+$ karma start
+```
+
+
