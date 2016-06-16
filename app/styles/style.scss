@@ -1,15 +1,18 @@
 $button-size: 55px;
+$calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
 
 .scientific-calculator {
-    width: 567px;
+    width: 570px;
+    font-family: $calculator-font;
 }
 
 .basic-calculator {
     width: 232px;
+    font-family: $calculator-font;
 }
 
 .calc-box {
-    padding: 4px;
+    padding: 3px;
     padding-top: 25px;
     margin-top: 50px;
     margin-bottom: 50px;
