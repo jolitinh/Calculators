@@ -34,11 +34,11 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
     }
 
     ul {
-        background-color: #ebebeb;
         margin: 0;  
         padding: 0;
 
         li {
+            background-color: #ebebeb;
             display: inline-block;
             vertical-align: middle;
             margin: 0;  
@@ -51,6 +51,10 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
             border: 1px solid #bebebe;
         }
 
+        li:hover {
+            background-color: #dcdcdc;
+        }
+
         li:first-child {
             border-left: 0;
         }
@@ -59,6 +63,10 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
             background-color: #686868;
             font-size: 25px;
             color: #ffffff;
+        }
+
+        li:last-child button:hover {
+            background-color: #494949;
         }
         
         &:nth-child(3) sup {
@@ -78,12 +86,20 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
 
     button.calc-number {
         font-size: 25px;
-        background-color: #f5f3f3;
+        background-color: #f5f5f5;
+    }
+
+    button.calc-number:hover {
+        background-color: #eee;
     }
 
     button.equally {
-        background-color: #000000;
+        background-color: #333;
         color: #ffffff;
+    }
+
+    button.equally:hover {
+        background-color: #111;
     }
 
     sup, span  {
