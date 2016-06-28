@@ -51,7 +51,7 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
             border: 1px solid #bebebe;
         }
 
-        li:hover {
+        li:active {
             background-color: #dcdcdc;
         }
 
@@ -65,7 +65,7 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
             color: #ffffff;
         }
 
-        li:last-child button:hover {
+        li:last-child button:active {
             background-color: #494949;
         }
         
@@ -89,7 +89,7 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
         background-color: #f5f5f5;
     }
 
-    button.calc-number:hover {
+    button.calc-number:active {
         background-color: #eee;
     }
 
@@ -98,7 +98,7 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
         color: #ffffff;
     }
 
-    button.equally:hover {
+    button.equally:active {
         background-color: #111;
     }
 
