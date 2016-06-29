@@ -5,8 +5,18 @@ $calculator-font: approximately_novaregular, ProximaNova, HelveticaNeue-Light, "
     width: 566px;
 }
 
-.basic-calculator {
+div.basic-calculator{
     width: 230px;
+    display: block;
+}
+
+.basic-calculator {
+    all: initial;
+}
+
+.basic-calculator * {
+    all: unset;
+    display: block;
 }
 
 div.calc-box {
