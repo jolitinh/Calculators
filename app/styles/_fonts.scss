@@ -1,0 +1,57 @@
+// Defines the font-face styles for the ProximaNova fonts
+
+/* Webfont: ProximaNova */
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('../fonts/ProximaNova.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ProximaNova.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/ProximaNova.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ProximaNova.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ProximaNova.svg#ProximaNova') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: ProximaNova-Bold */
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('../fonts/ProximaNova-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ProximaNova-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/ProximaNova-Bold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ProximaNova-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: ProximaNova-Light */
+@font-face {
+  font-family: 'ProximaNovaLight';
+  src: url('../fonts/ProximaNova-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/ProximaNova-Light.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/ProximaNova-Light.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/ProximaNova-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/ProximaNova-Light.svg#ProximaNova-Light') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: approximatelynova */
+@font-face {
+  font-family: 'approximately_novaregular';
+  src: url('../fonts/approximatelynova-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/approximatelynova-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/approximatelynova-webfont.woff2') format('woff2'), /* Modern Browsers */
+    url('../fonts/approximatelynova-webfont.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/approximatelynova-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/approximatelynova-webfont.svg#approximately_novaregular') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

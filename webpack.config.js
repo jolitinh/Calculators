@@ -17,9 +17,12 @@ module.exports = {
         presets: ['es2015']
       }
     },{
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
-      }]
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"]
+    },{ 
+      test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, 
+      loader: 'file-loader?name=fonts/[name].[ext]' 
+    }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

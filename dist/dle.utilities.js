@@ -54,8 +54,9 @@
 	'use strict';
 
 	__webpack_require__(2);
-	__webpack_require__(6);
-	__webpack_require__(10);
+	__webpack_require__(26);
+	__webpack_require__(28);
+	__webpack_require__(32);
 
 	angular.module('dle.utilities', ['dle.calculator', 'dle.scientific-calculator']);
 
@@ -69,14 +70,14 @@
 	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(25)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./ProximaNova.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./ProximaNova.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -94,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, ".scientific-calculator {\n  width: 570px;\n  font-family: system, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Lucida Grande\"; }\n\n.basic-calculator {\n  width: 232px;\n  font-family: system, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Lucida Grande\"; }\n\n.calc-box {\n  padding: 3px;\n  padding-top: 25px;\n  margin-top: 50px;\n  margin-bottom: 50px;\n  position: relative;\n  background-color: #bebebe; }\n  .calc-box form {\n    margin: 0;\n    padding: 0; }\n  .calc-box input[type=\"text\"] {\n    border: 0;\n    width: 100%;\n    outline: none;\n    text-align: right;\n    background-color: #ffffff;\n    font-size: 36px; }\n  .calc-box ul {\n    margin: 0;\n    padding: 0; }\n    .calc-box ul li {\n      background-color: #ebebeb;\n      display: inline-block;\n      vertical-align: middle;\n      margin: 0;\n      padding: 0;\n      width: 55px;\n      height: 55px;\n      overflow: hidden;\n      margin-right: -5px;\n      text-align: center;\n      border: 1px solid #bebebe; }\n    .calc-box ul li:active {\n      background-color: #dcdcdc; }\n    .calc-box ul li:first-child {\n      border-left: 0; }\n    .calc-box ul li:last-child button {\n      background-color: #686868;\n      font-size: 25px;\n      color: #ffffff; }\n    .calc-box ul li:last-child button:active {\n      background-color: #494949; }\n    .calc-box ul:nth-child(3) sup {\n      font-size: 11px; }\n  .calc-box button {\n    width: 100%;\n    height: 100%;\n    border: 0;\n    position: relative;\n    background-color: transparent;\n    font-size: 18px;\n    cursor: pointer; }\n  .calc-box button.calc-number {\n    font-size: 25px;\n    background-color: #f5f5f5; }\n  .calc-box button.calc-number:active {\n    background-color: #eee; }\n  .calc-box button.equally {\n    background-color: #333;\n    color: #ffffff; }\n  .calc-box button.equally:active {\n    background-color: #111; }\n  .calc-box sup, .calc-box span {\n    font-size: 13px; }\n  .calc-box sub {\n    font-size: 9px; }\n  .calc-box:before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 25px;\n    background-color: #6d6d6d; }\n  .calc-box .value-box {\n    padding: 5px 18px;\n    border-bottom: 1px solid #bebebe;\n    background-color: #ffffff; }\n", ""]);
+	exports.push([module.id, "/* Webfont: ProximaNova */\n@font-face {\n  font-family: 'ProximaNova';\n  src: url(" + __webpack_require__(5) + ");\n  /* IE9 Compat Modes */\n  src: url(" + __webpack_require__(5) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(6) + ") format(\"woff2\"), url(" + __webpack_require__(7) + ") format(\"woff\"), url(" + __webpack_require__(8) + ") format(\"truetype\"), url(" + __webpack_require__(9) + "#ProximaNova) format(\"svg\");\n  /* Legacy iOS */\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n\n/* Webfont: ProximaNova-Bold */\n@font-face {\n  font-family: 'ProximaNova';\n  src: url(" + __webpack_require__(10) + ");\n  /* IE9 Compat Modes */\n  src: url(" + __webpack_require__(10) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(11) + ") format(\"woff2\"), url(" + __webpack_require__(12) + ") format(\"woff\"), url(" + __webpack_require__(13) + ") format(\"truetype\"), url(" + __webpack_require__(14) + "#ProximaNova-Bold) format(\"svg\");\n  /* Legacy iOS */\n  font-style: normal;\n  font-weight: bold;\n  text-rendering: optimizeLegibility; }\n\n/* Webfont: ProximaNova-Light */\n@font-face {\n  font-family: 'ProximaNovaLight';\n  src: url(" + __webpack_require__(15) + ");\n  /* IE9 Compat Modes */\n  src: url(" + __webpack_require__(15) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(16) + ") format(\"woff2\"), url(" + __webpack_require__(17) + ") format(\"woff\"), url(" + __webpack_require__(18) + ") format(\"truetype\"), url(" + __webpack_require__(19) + "#ProximaNova-Light) format(\"svg\");\n  /* Legacy iOS */\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n\n/* Webfont: approximatelynova */\n@font-face {\n  font-family: 'approximately_novaregular';\n  src: url(" + __webpack_require__(20) + ");\n  /* IE9 Compat Modes */\n  src: url(" + __webpack_require__(20) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(21) + ") format(\"woff2\"), url(" + __webpack_require__(22) + ") format(\"woff\"), url(" + __webpack_require__(23) + ") format(\"truetype\"), url(" + __webpack_require__(24) + "#approximately_novaregular) format(\"svg\");\n  /* Legacy iOS */\n  font-style: normal;\n  font-weight: normal;\n  text-rendering: optimizeLegibility; }\n", ""]);
 
 	// exports
 
@@ -157,6 +158,126 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova.eot";
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova.woff2";
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova.woff";
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova.ttf";
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova.svg";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Bold.eot";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Bold.woff2";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Bold.woff";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Bold.ttf";
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Bold.svg";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Light.eot";
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Light.woff2";
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Light.woff";
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Light.ttf";
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/ProximaNova-Light.svg";
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/approximatelynova-webfont.eot";
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/approximatelynova-webfont.woff2";
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/approximatelynova-webfont.woff";
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/approximatelynova-webfont.ttf";
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "fonts/approximatelynova-webfont.svg";
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -408,23 +529,63 @@
 
 
 /***/ },
-/* 6 */
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(27);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(25)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".scientific-calculator {\n  width: 570px; }\n\n.basic-calculator {\n  width: 232px; }\n\ndiv.calc-box {\n  padding: 3px;\n  padding-top: 25px;\n  margin-top: 50px;\n  margin-bottom: 50px;\n  position: relative;\n  background-color: #bebebe; }\n  div.calc-box form {\n    margin: 0;\n    padding: 0; }\n    div.calc-box form input[type=\"text\"] {\n      border: 0;\n      width: 100%;\n      outline: none;\n      text-align: right;\n      background-color: #ffffff;\n      font-size: 36px;\n      font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif; }\n    div.calc-box form ul {\n      margin: 0;\n      padding: 0; }\n      div.calc-box form ul li {\n        background-color: #ebebeb;\n        display: inline-block;\n        vertical-align: middle;\n        margin: 0;\n        padding: 0;\n        width: 55px;\n        height: 55px;\n        overflow: hidden;\n        margin-right: -5px;\n        text-align: center;\n        border: 1px solid #bebebe; }\n      div.calc-box form ul li:active {\n        background-color: #dcdcdc; }\n      div.calc-box form ul li:first-child {\n        border-left: 0; }\n      div.calc-box form ul li:last-child button {\n        background-color: #686868;\n        font-size: 25px;\n        font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;\n        color: #ffffff; }\n      div.calc-box form ul li:last-child button:active {\n        background-color: #494949; }\n      div.calc-box form ul:nth-child(3) sup {\n        font-size: 11px;\n        font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif; }\n    div.calc-box form button {\n      width: 100%;\n      height: 100%;\n      border: 0;\n      position: relative;\n      background-color: transparent;\n      font-size: 18px;\n      font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;\n      cursor: pointer; }\n    div.calc-box form button.calc-number {\n      font-size: 25px;\n      font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif;\n      background-color: #f5f5f5; }\n    div.calc-box form button.calc-number:active {\n      background-color: #eee; }\n    div.calc-box form button.equally {\n      background-color: #333;\n      color: #ffffff; }\n    div.calc-box form button.equally:active {\n      background-color: #111; }\n    div.calc-box form sup, div.calc-box form span {\n      font-size: 13px;\n      font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif; }\n    div.calc-box form sub {\n      font-size: 9px;\n      font-family: approximately_novaregular, \"Proxima Nova\", HelveticaNeue-Light, \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif; }\n    div.calc-box form:before {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 25px;\n      background-color: #6d6d6d; }\n    div.calc-box form .value-box {\n      padding: 5px 18px;\n      border-bottom: 1px solid #bebebe;\n      background-color: #ffffff; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var calculatorDirective = __webpack_require__(7);
+	var calculatorDirective = __webpack_require__(29);
 
 	module.exports = angular.module('dle.calculator', []).directive('calculator', [calculatorDirective]);
 
 /***/ },
-/* 7 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var template = __webpack_require__(8);
-	var BigNumber = __webpack_require__(9);
+	var template = __webpack_require__(30);
+	var BigNumber = __webpack_require__(31);
 
 	module.exports = function () {
 	  'use strict';
@@ -535,13 +696,13 @@
 	};
 
 /***/ },
-/* 8 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"basic-calculator\">\n\t<div class=\"calc-box\">\n\t\t<form name=\"Calculator\">\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input name=\"calcValue\" type=\"text\" ng-model=\"ctrl.calculatorOutput\" readonly=\"readonly\"/>\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.divideByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"ctrl.appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"ctrl.appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"ctrl.appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"ctrl.appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"ctrl.appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"ctrl.appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"ctrl.appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"ctrl.appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"ctrl.appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"ctrl.appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"ctrl.appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"ctrl.appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"ctrl.appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"ctrl.appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"ctrl.performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"ctrl.appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"
 
 /***/ },
-/* 9 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*! bignumber.js v2.3.0 https://github.com/MikeMcl/bignumber.js/LICENCE */
@@ -3280,23 +3441,23 @@
 
 
 /***/ },
-/* 10 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var scientificCalculatorDirective = __webpack_require__(11);
+	var scientificCalculatorDirective = __webpack_require__(33);
 
 	module.exports = angular.module('dle.scientific-calculator', []).directive('scientificCalculator', scientificCalculatorDirective);
 
 /***/ },
-/* 11 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var template = __webpack_require__(12);
-	var BigNumber = __webpack_require__(9);
+	var template = __webpack_require__(34);
+	var BigNumber = __webpack_require__(31);
 
 	module.exports = function () {
 	  'use strict';
@@ -3407,7 +3568,7 @@
 	};
 
 /***/ },
-/* 12 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"scientific-calculator\">\n\t<div class=\"calc-box\">\n\t\t<form>\n\t\t\t<div class=\"value-box\">\n\t\t\t\t<input calcValue type=\"text\" ng-model=\"ctrl.calculatorOutput\" readonly=\"readonly\" />\n\t\t\t</div>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">(</button></li>\n\t\t\t\t<li><button type=\"submit\">)</button></li>\n\t\t\t\t<li><button type=\"submit\">mc</button></li>\n\t\t\t\t<li><button type=\"submit\">m+</button></li>\n\t\t\t\t<li><button type=\"submit\">m-</button></li>\n\t\t\t\t<li><button type=\"submit\">mr</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.squareRoot();\">&radic;</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.invertValue();\">+/-</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.dividByHundred();\">%</button></li>\n\t\t\t\t<li><button type=\"button\" ng-click=\"ctrl.clearEntries();\">c</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">2<sup>nd</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>2</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>3</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">x<sup>y</sup></button></li>\n\t\t\t\t<li><button type=\"submit\">nPr</button></li>\n\t\t\t\t<li><button type=\"submit\">nCr</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"7\" ng-click=\"ctrl.appendNumber($event);\">7</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"8\" ng-click=\"ctrl.appendNumber($event);\">8</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"9\" ng-click=\"ctrl.appendNumber($event);\">9</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"/\" ng-click=\"ctrl.appendOperation($event);\">&divide;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">x!</button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>3</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>n</sup>&radic;<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\"><sup>1</sup>/<span>x</span></button></li>\n\t\t\t\t<li><button type=\"submit\">log<sub>10</sub></button></li>\n\t\t\t\t<li><button type=\"submit\">In</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"4\" ng-click=\"ctrl.appendNumber($event);\">4</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"5\" ng-click=\"ctrl.appendNumber($event);\">5</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"6\" ng-click=\"ctrl.appendNumber($event);\">6</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"*\" ng-click=\"ctrl.appendOperation($event);\">&times;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Rad</button></li>\n\t\t\t\t<li><button type=\"submit\">sin</button></li>\n\t\t\t\t<li><button type=\"submit\">cos</button></li>\n\t\t\t\t<li><button type=\"submit\">tan</button></li>\n\t\t\t\t<li><button type=\"submit\">EE</button></li>\n\t\t\t\t<li><button type=\"submit\">e</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"1\" ng-click=\"ctrl.appendNumber($event);\">1</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"2\" ng-click=\"ctrl.appendNumber($event);\">2</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"3\" ng-click=\"ctrl.appendNumber($event);\">3</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"-\" ng-click=\"ctrl.appendOperation($event);\">&minus;</button></li>\n\t\t\t</ul>\n\t\t\t<ul>\n\t\t\t\t<li><button type=\"submit\">Deg</button></li>\n\t\t\t\t<li><button type=\"submit\">sinh</button></li>\n\t\t\t\t<li><button type=\"submit\">cosh</button></li>\n\t\t\t\t<li><button type=\"submit\">tanh</button></li>\n\t\t\t\t<li><button type=\"submit\">TT</button></li>\n\t\t\t\t<li><button type=\"submit\">Rand</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\"0\" ng-click=\"ctrl.appendNumber($event);\">0</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number\" value=\".\" ng-click=\"ctrl.appendNumber($event);\">.</button></li>\n\t\t\t\t<li><button type=\"button\" class=\"calc-number equally\" value=\"=\" ng-click=\"ctrl.performCalculation();\">=</button></li>\n\t\t\t\t<li><button type=\"button\" value=\"+\" ng-click=\"ctrl.appendOperation($event);\">+</button></li>\n\t\t\t</ul>\n\t\t</form>\n\t</div>\n</div>"

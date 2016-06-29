@@ -1,17 +1,15 @@
 $button-size: 55px;
-$calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande";
+$calculator-font: approximately_novaregular, "Proxima Nova", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 .scientific-calculator {
     width: 570px;
-    font-family: $calculator-font;
 }
 
 .basic-calculator {
     width: 232px;
-    font-family: $calculator-font;
 }
 
-.calc-box {
+div.calc-box {
     padding: 3px;
     padding-top: 25px;
     margin-top: 50px;
@@ -19,109 +17,117 @@ $calculator-font: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "
     position: relative;
     background-color: #bebebe;
 
+
     form {
         margin: 0;  
         padding: 0;
-    }
 
-    input[type="text"] {
-        border: 0;
-        width: 100%;
-        outline: none;
-        text-align: right;
-        background-color: #ffffff;
-        font-size: 36px;
-    }
+        input[type="text"] {
+            border: 0;
+            width: 100%;
+            outline: none;
+            text-align: right;
+            background-color: #ffffff;
+            font-size: 36px;
+            font-family: $calculator-font;
+        }
 
-    ul {
-        margin: 0;  
-        padding: 0;
-
-        li {
-            background-color: #ebebeb;
-            display: inline-block;
-            vertical-align: middle;
+        ul {
             margin: 0;  
             padding: 0;
-            width: $button-size;
-            height: $button-size;
-            overflow: hidden;
-            margin-right: -5px;
-            text-align: center;
-            border: 1px solid #bebebe;
+
+            li {
+                background-color: #ebebeb;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0;  
+                padding: 0;
+                width: $button-size;
+                height: $button-size;
+                overflow: hidden;
+                margin-right: -5px;
+                text-align: center;
+                border: 1px solid #bebebe;
+            }
+
+            li:active {
+                background-color: #dcdcdc;
+            }
+
+            li:first-child {
+                border-left: 0;
+            }
+
+            li:last-child button {
+                background-color: #686868;
+                font-size: 25px;
+                font-family: $calculator-font;
+                color: #ffffff;
+            }
+
+            li:last-child button:active {
+                background-color: #494949;
+            }
+            
+            &:nth-child(3) sup {
+                font-size: 11px;
+                font-family: $calculator-font;
+            }
         }
 
-        li:active {
-            background-color: #dcdcdc;
+        button {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            position: relative;
+            background-color: transparent;
+            font-size: 18px;
+            font-family: $calculator-font;
+            cursor: pointer;
         }
 
-        li:first-child {
-            border-left: 0;
-        }
-
-        li:last-child button {
-            background-color: #686868;
+        button.calc-number {
             font-size: 25px;
+            font-family: $calculator-font;
+            background-color: #f5f5f5;
+        }
+
+        button.calc-number:active {
+            background-color: #eee;
+        }
+
+        button.equally {
+            background-color: #333;
             color: #ffffff;
         }
 
-        li:last-child button:active {
-            background-color: #494949;
+        button.equally:active {
+            background-color: #111;
         }
-        
-        &:nth-child(3) sup {
-            font-size: 11px;
+
+        sup, span  {
+            font-size: 13px;
+            font-family: $calculator-font;
         }
-    }
+        sub {
+            font-size: 9px;
+            font-family: $calculator-font;
+        }
 
-    button {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        position: relative;
-        background-color: transparent;
-        font-size: 18px;
-        cursor: pointer;
-    }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            background-color: #6d6d6d;
+        }
 
-    button.calc-number {
-        font-size: 25px;
-        background-color: #f5f5f5;
-    }
-
-    button.calc-number:active {
-        background-color: #eee;
-    }
-
-    button.equally {
-        background-color: #333;
-        color: #ffffff;
-    }
-
-    button.equally:active {
-        background-color: #111;
-    }
-
-    sup, span  {
-        font-size: 13px;
-    }
-    sub {
-        font-size: 9px;
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 25px;
-        background-color: #6d6d6d;
-    }
-
-    .value-box {
-        padding: 5px 18px;
-        border-bottom: 1px solid #bebebe;
-        background-color: #ffffff;
+        .value-box {
+            padding: 5px 18px;
+            border-bottom: 1px solid #bebebe;
+            background-color: #ffffff;
+        }
     }
 }
