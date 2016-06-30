@@ -3,31 +3,20 @@ $calculator-font: approximately_novaregular, ProximaNova, HelveticaNeue-Light, "
 
 .scientific-calculator {
     width: 566px;
-    display: block;
 }
 
 div.basic-calculator{
     width: 230px;
     display: block;
-
-    align-content: initial;
-    align-items: initial;
-    align-self: initial;
-    alignment-baseline: initial;
-    animation: initial;
-    backface-visibility: initial;
-    background: initial;
-
-    font-size: initial;
 }
 
 .basic-calculator {
-    font-family: $calculator-font;
+    all: initial;
 }
 
 .basic-calculator * {
+    all: unset;
     display: block;
-    font-family: $calculator-font;
 }
 
 div.calc-box {
@@ -50,6 +39,7 @@ div.calc-box {
             text-align: right;
             background-color: #ffffff;
             font-size: 36px;
+            font-family: $calculator-font;
         }
 
         ul {
@@ -81,6 +71,7 @@ div.calc-box {
             li:last-child button {
                 background-color: #686868;
                 font-size: 25px;
+                font-family: $calculator-font;
                 color: #ffffff;
             }
 
@@ -90,6 +81,7 @@ div.calc-box {
             
             &:nth-child(3) sup {
                 font-size: 11px;
+                font-family: $calculator-font;
             }
         }
 
@@ -100,11 +92,13 @@ div.calc-box {
             position: relative;
             background-color: transparent;
             font-size: 18px;
+            font-family: $calculator-font;
             cursor: pointer;
         }
 
         button.calc-number {
             font-size: 25px;
+            font-family: $calculator-font;
             background-color: #f5f5f5;
         }
 
@@ -119,14 +113,15 @@ div.calc-box {
 
         button.equally:active {
             background-color: #111;
-            color: #ffffff;
         }
 
         sup, span  {
             font-size: 13px;
+            font-family: $calculator-font;
         }
         sub {
             font-size: 9px;
+            font-family: $calculator-font;
         }
 
         &:before {
