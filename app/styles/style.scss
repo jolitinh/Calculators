@@ -73,6 +73,7 @@ div.calc-box {
                 font-size: 25px;
                 font-family: $calculator-font;
                 color: #ffffff;
+                -webkit-text-fill-color: rgba(255, 255, 255, .9);
             }
 
             li:last-child button:active {
@@ -109,6 +110,7 @@ div.calc-box {
         button.equally {
             background-color: #333;
             color: #ffffff;
+            -webkit-text-fill-color: rgba(255, 255, 255, .9);
         }
 
         button.equally:active {
