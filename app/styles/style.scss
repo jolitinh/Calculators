@@ -32,14 +32,18 @@ div.calc-box {
         margin: 0;  
         padding: 0;
 
-        input[type="text"] {
+        div.calculator-output {
             border: 0;
             width: 100%;
+            max-width: 100%;
             outline: none;
             text-align: right;
             background-color: #ffffff;
             font-size: 36px;
             font-family: $calculator-font;
+            overflow: hidden;
+            height: 43px;
+            line-height:43px;
         }
 
         ul {
