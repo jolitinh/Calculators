@@ -41,7 +41,6 @@ div.calc-box {
             background-color: #ffffff;
             font-size: 36px;
             font-family: $calculator-font;
-            overflow: hidden;
             height: 43px;
             line-height:43px;
         }
@@ -141,7 +140,7 @@ div.calc-box {
         }
 
         .value-box {
-            padding: 5px 18px;
+            padding: 5px 10px;
             border-bottom: 1px solid #bebebe;
             background-color: #ffffff;
         }
