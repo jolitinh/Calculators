@@ -645,6 +645,7 @@
 	      var operand1 = 0;
 	      var operator = void 0;
 	      var calculationMade = false;
+	      var maxAllowedCharLength = 14;
 	      var alreadyHasDecimal = function alreadyHasDecimal(number) {
 	        return number.indexOf('.') > 0;
 	      };
@@ -661,10 +662,9 @@
 	        if (_this.calculatorOutput === '0' || calculationMade) {
 	          _this.calculatorOutput = valueEntered;
 	          calculationMade = false;
+	        } else if (_this.calculatorOutput.toString().length === maxAllowedCharLength) {
+	          return;
 	        } else {
-	          if (_this.calculatorOutput.toString().length === 14) {
-	            return;
-	          }
 	          _this.calculatorOutput += valueEntered;
 	        }
 	      };

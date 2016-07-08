@@ -14,6 +14,7 @@ module.exports = function() {
       let operand1 = 0;
       let operator;
       let calculationMade = false;
+      let maxAllowedCharLength = 14;
       let alreadyHasDecimal = number => number.indexOf('.') > 0;
 
       this.calculatorOutput = '0';
@@ -28,10 +29,9 @@ module.exports = function() {
         if (this.calculatorOutput === '0' || calculationMade) {
           this.calculatorOutput = valueEntered;
           calculationMade = false;
+        } else if (this.calculatorOutput.toString().length === maxAllowedCharLength) {
+          return;
         } else {
-          if (this.calculatorOutput.toString().length === 14) {
-            return;
-          }
           this.calculatorOutput += valueEntered;
         }
       };
