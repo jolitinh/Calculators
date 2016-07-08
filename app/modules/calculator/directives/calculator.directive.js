@@ -29,6 +29,9 @@ module.exports = function() {
           this.calculatorOutput = valueEntered;
           calculationMade = false;
         } else {
+          if (this.calculatorOutput.toString().length === 14) {
+            return;
+          }
           this.calculatorOutput += valueEntered;
         }
       };

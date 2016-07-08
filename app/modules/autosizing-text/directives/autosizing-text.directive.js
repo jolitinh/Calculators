@@ -4,11 +4,10 @@ module.exports = function() {
   return {
     restrict: 'A',
     link: function(scope, element) {
-      element.css('font-size', '36px');
+      var initialFontSize = '36px';
 
+      element.css('font-size', initialFontSize);
       element.bind('DOMSubtreeModified',function() {
-        console.log('offsetWidth:', this.offsetWidth);
-        console.log('scrollWidth', this.scrollWidth);
         var outputField = angular.element(this);
 
         if (this.scrollWidth > this.offsetWidth) {
@@ -18,7 +17,7 @@ module.exports = function() {
             outputField.css('font-size', originalFontSize - 1 + 'px');
           }
         } else if (this.scrollWidth === this.offsetWidth) {
-          outputField.css('font-size', '36px');
+          outputField.css('font-size', initialFontSize);
         }
       });
     }
