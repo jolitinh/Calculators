@@ -55,6 +55,26 @@ describe('A basic calculator', function() {
       controller.appendNumber(createMockEvent('.'));
       expect(controller.calculatorOutput).toBe('4.2');
     })
+
+    it('once 14 characters have been entered, the rest do not get appended', function() {
+      controller.appendNumber(createMockEvent('1'));
+      controller.appendNumber(createMockEvent('2'));
+      controller.appendNumber(createMockEvent('3'));
+      controller.appendNumber(createMockEvent('4'));
+      controller.appendNumber(createMockEvent('5'));
+      controller.appendNumber(createMockEvent('6'));
+      controller.appendNumber(createMockEvent('7'));
+      controller.appendNumber(createMockEvent('8'));
+      controller.appendNumber(createMockEvent('9'));
+      controller.appendNumber(createMockEvent('0'));
+      controller.appendNumber(createMockEvent('1'));
+      controller.appendNumber(createMockEvent('2'));
+      controller.appendNumber(createMockEvent('3'));
+      controller.appendNumber(createMockEvent('4'));
+      controller.appendNumber(createMockEvent('5'));
+
+      expect(controller.calculatorOutput).toBe('12345678901234');
+    });
   });
 
   describe('$scope.performCalculation', function() {
@@ -128,7 +148,6 @@ describe('A basic calculator', function() {
 
       expect(controller.calculatorOutput).toBe(13);
     });
-
   });
 
   describe('$scope.invertValue inverts the current value', function() {
