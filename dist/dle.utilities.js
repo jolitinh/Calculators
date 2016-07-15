@@ -617,9 +617,11 @@
 
 	'use strict';
 
+	__webpack_require__(28);
+
 	var calculatorDirective = __webpack_require__(31);
 
-	module.exports = angular.module('dle.calculator', []).directive('calculator', [calculatorDirective]);
+	module.exports = angular.module('dle.calculator', ['dle.autosizing-text']).directive('calculator', [calculatorDirective]);
 
 /***/ },
 /* 31 */
