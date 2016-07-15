@@ -8,15 +8,21 @@ $calculator-font: approximately_novaregular, ProximaNova, HelveticaNeue-Light, "
 div.basic-calculator{
     width: 230px;
     display: block;
+    box-sizing: content-box;
 }
 
 .basic-calculator {
     all: initial;
+    box-sizing: content-box;
 }
 
 .basic-calculator * {
     all: unset;
     display: block;
+     margin:0; 
+     padding:0;
+     box-sizing: content-box;
+     font-size: 16px;
 }
 
 div.calc-box {
@@ -26,11 +32,13 @@ div.calc-box {
     margin-bottom: 50px;
     position: relative;
     background-color: #bebebe;
+    box-sizing: content-box;
 
 
     form {
         margin: 0;  
         padding: 0;
+        box-sizing: content-box;
 
         div.calculator-output {
             border: 0;
