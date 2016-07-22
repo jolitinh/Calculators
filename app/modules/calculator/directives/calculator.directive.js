@@ -55,7 +55,9 @@ module.exports = function() {
 
         let calculatedVal = 0;
         let x = new BigNumber(parseFloat(operand1));
-        let y = new BigNumber(this.calculatorOutput);
+        let y = (this.calculatorOutput.indexOf('e') > -1) ? this.calculatorOutput.toFixed() : this.calculatorOutput;
+
+        y = new BigNumber(y);
 
         switch (operator) {
           case '+':

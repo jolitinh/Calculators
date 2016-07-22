@@ -690,7 +690,9 @@
 
 	        var calculatedVal = 0;
 	        var x = new BigNumber(parseFloat(operand1));
-	        var y = new BigNumber(_this.calculatorOutput);
+	        var y = _this.calculatorOutput.indexOf('e') > -1 ? _this.calculatorOutput.toFixed() : _this.calculatorOutput;
+
+	        y = new BigNumber(y);
 
 	        switch (operator) {
 	          case '+':
