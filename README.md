@@ -7,13 +7,13 @@ This repo consists of UI Widgets that could be used in different applications vi
   ```
 <calculator></calculator>
 ```
-![alt tag](https://github.mheducation.com/MHEducation/dle-utilities/blob/master/screenshots/basic-calculator.png)
+![alt tag](https://github.com/jolitinh/Calculators/blob/dev/screenshots/basic-calculator.png)
 
   - Scientific Calculator (In Progress - not yet functional)
   ```
 <scientific-calculator></scientific-calculator>
 ```
-![alt tag](https://github.mheducation.com/MHEducation/dle-utilities/blob/master/screenshots/scientific-calculator.png)
+![alt tag](https://github.com/jolitinh/Calculators/blob/dev/screenshots/scientific-calculator.png)
 
 
 
