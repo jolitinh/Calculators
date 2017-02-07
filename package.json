@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "UI Widgets",
   "main": "server.js",
+  "scripts": {
+    "test": "gulp test",
+    "build": "webpack --bail"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.mheducation.com/MHEducation/dle-utilities.git"
